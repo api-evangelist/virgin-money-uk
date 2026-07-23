@@ -1,0 +1,103 @@
+aid: virgin-money-uk
+name: Virgin Money UK
+review:
+  question: Does Virgin Money UK expose a documented, live public UK Open Banking API surface?
+  answer: true
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Virgin Money UK operates a genuine, documented UK Open Banking developer
+    portal at https://developer.virginmoney.com/ (HTTP 200), split into two API
+    families: "Merged" APIs (Virgin Money / Clydesdale / Yorkshire accounts,
+    sort codes 05/82) and "Standalone" APIs (personal accounts and credit
+    cards, sort code 08). The bank is a fully participating PSD2 ASPSP but is
+    NOT one of the original CMA9. Documented OBIE Read/Write Standard APIs were
+    confirmed on the portal: Account & Transaction Information (AIS, Merged
+    v3.1.2 / Standalone v3.1.1), Payment Initiation (PIS) across Domestic
+    Immediate (dip), Domestic Scheduled (dsp), File Payments, International (ip)
+    and International Scheduled (isp) all at v3.1.2, and Confirmation of Funds
+    (CBPII, cof) at v3.1.2, plus Token (v3.0) and Dynamic Client Registration
+    (v3.2). The live production OpenID Connect discovery document was CONFIRMED
+    (HTTP 200, 2026-07-23) at
+    https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/.well-known/openid-configuration
+    exposing the real issuer, authorization, token
+    (secureapi.prod.ob.virginmoney.com) and registration endpoints, acr
+    urn:openbanking:psd2:sca, and token auth methods including tls_client_auth
+    and private_key_jwt - proving a FAPI-grade OAuth2/OIDC + mTLS + PSD2 SCA
+    auth model. A public, unauthenticated Open Data endpoint could NOT be
+    confirmed: the legacy CYBG base URL from the OBIE participant registry
+    (https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking) resolves
+    but returned HTTP 404 on every probed ATM / branch / PCA / fca-service-metrics
+    path, so the current-brand Open Data surface is represented against the
+    shared OBIE Open Data Standard and flagged unverified.
+  ownership: |
+    Formerly the FTSE-listed Virgin Money UK PLC (the former CYBG plc). Acquired
+    by Nationwide Building Society on 1 October 2024; banking business scheduled
+    to transfer into Nationwide on 2 April 2026. Regulated by the FCA and PRA.
+  developerPortal:
+    url: https://developer.virginmoney.com/
+    status: 200
+    confirmed: true
+  openDataConfirmed: false
+  openDataBaseUrlDocumented: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
+  openDataProbeResult: HTTP 404 on all probed atm/branch/pca/fca-service-metrics paths (2026-07-23)
+  readWriteConformance:
+    standard: OBIE Read/Write API Standard
+    versions:
+      accountTransaction: v3.1.2 (Merged) / v3.1.1 (Standalone)
+      paymentInitiation: v3.1.2
+      confirmationOfFunds: v3.1.2
+      token: v3.0
+      dynamicClientRegistration: v3.2
+    authModel: FAPI OAuth2/OpenID Connect + mutual-TLS (tls_client_auth) + PSD2 SCA (acr urn:openbanking:psd2:sca)
+    certificates: OBIE OBWAC/OBSeal or eIDAS QWAC/QSEAL; Dynamic Client Registration supported
+  specProvenance: |
+    The only harvested OpenAPI is the SHARED OBIE Open Data API Standard
+    (opendata-swagger.json, Swagger 2.0, "Open Data API" v1.3) from
+    github.com/OpenBankingUK/opendata-api-spec-compiled - this is the
+    cross-industry OBIE standard, NOT a Virgin Money proprietary contract. No
+    bank-proprietary OpenAPI/Swagger for the Read/Write APIs was publicly
+    downloadable from the portal; those are documented as HTML reference only.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
+      documented: true
+      note: OBIE Read/Write resource host (issuer confirmed live via OIDC discovery).
+    - protocol: REST
+      scheme: https
+      baseURL: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
+      documented: true
+      note: Secured token + dynamic client registration host (from live OIDC discovery).
+    - protocol: REST
+      scheme: https
+      baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
+      documented: true
+      note: Legacy CYBG Open Data base URL from OBIE participant registry; returned 404 on probe (unverified).
+  endpointsConfirmedLive:
+    - GET https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/.well-known/openid-configuration (200)
+sources:
+  - url: https://developer.virginmoney.com/
+    type: DeveloperPortal
+    note: Live portal (200); Merged and Standalone API families.
+  - url: https://developer.virginmoney.com/merged/
+    type: Documentation
+    note: Merged API catalogue - Accounts, dip, dsp, file-payments, ip, isp, cof, token, dynamic-registration.
+  - url: https://developer.virginmoney.com/standalone/oidc/
+    type: Documentation
+    note: OIDC provider documentation.
+  - url: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/.well-known/openid-configuration
+    type: WellKnown
+    note: Live production OIDC discovery document (200) - issuer, endpoints, PSD2 SCA acr, mTLS auth.
+  - url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+    type: OpenAPI
+    note: Shared OBIE Open Data Standard (opendata-swagger.json) harvested into openapi/.
+  - url: https://github.com/OpenBankingUK/read-write-api-specs
+    type: Documentation
+    note: OBIE Read/Write API Standard specs the bank conforms to (not proprietary).
+actions:
+  openapiHarvested: true
+  openapiPath: openapi/obie-opendata-api-standard-openapi.json
+  wellKnownPath: well-known/virgin-money-uk-openid-configuration.json
+  apisYmlCreated: true
