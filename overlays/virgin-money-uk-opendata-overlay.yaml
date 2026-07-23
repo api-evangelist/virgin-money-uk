@@ -1,0 +1,22 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Virgin Money UK Open Data API
+  version: 1.0.0
+extends: openapi/obie-opendata-api-standard-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: virgin-money-uk
+    x-apievangelist-standard: OBIE Open Data API Standard
+    x-apievangelist-auth: none (public, unauthenticated open data)
+    x-apievangelist-rate-limit-signal: HTTP 429
+    x-apievangelist-conventions: conventions/virgin-money-uk-conventions.yml
+    x-apievangelist-errors: errors/virgin-money-uk-problem-types.yml
+- target: $.tags
+  update:
+  - name: Branch
+    description: Branch locator open data.
+    x-apievangelist-entity: Branch
+  - name: ATM
+    description: ATM locator open data.
+    x-apievangelist-entity: ATM

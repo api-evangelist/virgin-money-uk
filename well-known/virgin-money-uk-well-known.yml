@@ -1,0 +1,27 @@
+generated: '2026-07-23'
+method: searched
+hosts:
+- host: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: virgin-money-uk-openid-configuration.json
+    note: >-
+      Live FAPI OpenID Connect discovery document for the production Open Banking
+      authorization server. Confirmed 2026-07-23.
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://uk.virginmoney.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: virgin-money-uk-security.txt
+    note: >-
+      RFC 9116 security.txt with security@virginmoney.com contact and a
+      disclosure policy. Confirmed 2026-07-23 (Expires header 2025-03-31, stale).
+- host: https://api.prod.ob.virginmoney.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404

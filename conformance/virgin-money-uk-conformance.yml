@@ -1,0 +1,44 @@
+generated: '2026-07-23'
+method: searched
+source: well-known/virgin-money-uk-openid-configuration.json
+note: >-
+  Standards conformance for Virgin Money UK's Open Banking surface, evidenced by
+  the live OIDC discovery document, the OBIE Read-Write Standard the developer
+  portal implements, and the UK regulatory regime (FCA/PRA authorised ASPSP).
+standards:
+- id: oauth2
+  conforms: true
+  evidence: OIDC discovery advertises authorization_code and client_credentials grants with token endpoint.
+- id: oidc
+  conforms: true
+  evidence: Live /.well-known/openid-configuration issuer, PS256 id_token signing, pairwise subjects.
+- id: fapi
+  conforms: true
+  evidence: >-
+    Financial-grade API profile — PS256 request-object signing, tls_client_auth,
+    certificate-bound access tokens, private_key_jwt, acr urn:openbanking:psd2:sca.
+- id: psd2
+  conforms: true
+  evidence: >-
+    PSD2 / UK Payment Services Regulations 2017 ASPSP; strong customer
+    authentication via acr_values_supported urn:openbanking:psd2:sca.
+- id: obie-read-write
+  conforms: true
+  evidence: >-
+    Implements OBIE Read/Write Data API Standard (AIS v3.1.x, PIS v3.1.x,
+    CBPII v3.1.x) documented across the merged and standalone developer portals.
+- id: obie-open-data
+  conforms: true
+  evidence: openapi/obie-opendata-api-standard-openapi.json implements the OBIE Open Data Standard.
+- id: mtls
+  conforms: true
+  evidence: tls_client_auth token endpoint auth + tls_client_certificate_bound_access_tokens true.
+- id: dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint present (OBIE DCR v3.2) accepting OBWAC/OBSeal or eIDAS certificates.
+- id: eidas
+  conforms: true
+  evidence: TPP onboarding accepts eIDAS QWAC/QSEAL certificates alongside OBIE OBWAC/OBSeal.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: OBIE uses its own OBError error envelope, not application/problem+json.

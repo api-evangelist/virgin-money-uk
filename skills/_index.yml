@@ -1,0 +1,7 @@
+generated: '2026-07-23'
+method: generated
+skills:
+- file: virgin-money-uk-locate-atms-branches.md
+  name: Locate Virgin Money ATMs and branches (Open Data)
+  api: openapi/obie-opendata-api-standard-openapi.json
+  operations: [GET /branches, GET /atms, GET /personal-current-accounts, GET /business-current-accounts, GET /unsecured-sme-loans, GET /commercial-credit-cards]

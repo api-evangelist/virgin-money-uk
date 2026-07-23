@@ -1,0 +1,83 @@
+generated: '2026-07-23'
+method: derived
+format: obie-oberror
+source: >-
+  openapi/obie-opendata-api-standard-openapi.json (HTTP status catalogue) +
+  OBIE Read/Write Standard OBError model (UK.OBIE.* error codes)
+note: >-
+  HTTP-status entries are derived from the responses declared on the Open Data
+  OpenAPI operations; the UK.OBIE.* error codes are the standard OBIE Read/Write
+  error catalogue the bank's AIS/PIS/CBPII APIs return in the OBError envelope.
+  OBIE does not use RFC 9457 application/problem+json.
+envelope:
+  media_type: application/json
+  shape: OBError
+  fields: [Code, Id, Message, 'Errors[].ErrorCode', 'Errors[].Message', 'Errors[].Path', 'Errors[].Url']
+problems:
+- status: 400
+  title: Bad Request
+  description: Malformed request, invalid parameters, or a validation failure.
+  source_operation: openapi/obie-opendata-api-standard-openapi.json#GET /branches
+- status: 401
+  title: Unauthorized
+  description: Missing, expired, or invalid access token / consent (Read-Write APIs).
+- status: 403
+  title: Forbidden
+  description: Token valid but lacks the required scope or consent for the resource.
+- status: 404
+  title: Not Found
+  description: Resource does not exist.
+- status: 405
+  title: Method Not Allowed
+  description: HTTP method not supported for the resource.
+- status: 406
+  title: Not Acceptable
+  description: Requested representation/media type not available.
+- status: 408
+  title: Request Timeout
+  description: The server timed out waiting for the request.
+  source_operation: openapi/obie-opendata-api-standard-openapi.json#GET /branches
+- status: 415
+  title: Unsupported Media Type
+  description: Request body media type not supported.
+- status: 429
+  title: Too Many Requests
+  description: Rate/polling limit exceeded; back off and retry later.
+  source_operation: openapi/obie-opendata-api-standard-openapi.json#GET /branches
+- status: 500
+  title: Internal Server Error
+  description: Unexpected server error.
+  source_operation: openapi/obie-opendata-api-standard-openapi.json#GET /branches
+- status: 503
+  title: Service Unavailable
+  description: Service temporarily unavailable (maintenance or overload).
+  source_operation: openapi/obie-opendata-api-standard-openapi.json#GET /branches
+obie_error_codes:
+- code: UK.OBIE.Field.Invalid
+  meaning: A field failed validation.
+- code: UK.OBIE.Field.Missing
+  meaning: A required field is missing.
+- code: UK.OBIE.Field.Unexpected
+  meaning: An unexpected field was supplied.
+- code: UK.OBIE.Header.Invalid
+  meaning: A request header failed validation.
+- code: UK.OBIE.Header.Missing
+  meaning: A required request header is missing.
+- code: UK.OBIE.Resource.NotFound
+  meaning: The requested resource was not found.
+- code: UK.OBIE.Resource.InvalidConsentStatus
+  meaning: The consent is not in a status permitting the operation.
+- code: UK.OBIE.Resource.InvalidFormat
+  meaning: The resource format is invalid.
+- code: UK.OBIE.Resource.ConsentMismatch
+  meaning: The request does not match the granted consent.
+- code: UK.OBIE.Rules.FailsControl
+  meaning: The request breaks an OBIE business rule / control.
+- code: UK.OBIE.Signature.Invalid
+  meaning: The detached JWS signature is invalid.
+- code: UK.OBIE.Signature.Missing
+  meaning: A required signature (x-jws-signature) is missing.
+- code: UK.OBIE.Unsupported.Frequency
+  meaning: The requested payment frequency is not supported.
+- code: UK.OBIE.UnexpectedError
+  meaning: An unexpected error occurred processing the request.

@@ -1,0 +1,51 @@
+generated: '2026-07-23'
+method: searched
+source: well-known/virgin-money-uk-openid-configuration.json
+docs: https://developer.virginmoney.com/merged/oidc/
+summary:
+  types: [oauth2, openIdConnect, mutualTLS]
+  api_key_in: []
+  oauth2_flows: [authorizationCode, clientCredentials]
+  profile: FAPI (Financial-grade API) — UK Open Banking / OBIE Read-Write Standard
+  strong_customer_authentication: true
+schemes:
+- name: OpenIDConnect
+  type: openIdConnect
+  openIdConnectUrl: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/.well-known/openid-configuration
+  sources: [well-known/virgin-money-uk-openid-configuration.json]
+  details:
+    issuer: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
+    authorization_endpoint: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/oidcapi/oauth2/authorize
+    token_endpoint: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/oidcapi/oauth2/token
+    registration_endpoint: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/register
+    jwks_uri: https://keystore.openbanking.org.uk/0015800000jf8aKAAQ/0015800000jf8aKAAQ.jwks
+    response_types_supported: [code id_token, code]
+    grant_types_supported: [authorization_code, client_credentials]
+    id_token_signing_alg_values_supported: [PS256]
+    request_object_signing_alg_values_supported: [PS256]
+    acr_values_supported: [urn:openbanking:psd2:sca]
+    subject_types_supported: [pairwise]
+- name: OAuth2
+  type: oauth2
+  sources: [well-known/virgin-money-uk-openid-configuration.json]
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/oidcapi/oauth2/authorize
+    tokenUrl: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/oidcapi/oauth2/token
+    scopes: [openid, accounts, payments, fundsconfirmations]
+    note: >-
+      Used for AIS/PIS/CBPII consent authorisation; combined with an
+      openbanking_intent_id claim and PSD2 strong customer authentication.
+  - flow: clientCredentials
+    tokenUrl: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/oidcapi/oauth2/token
+    note: TPP client-credentials grant to create consent/resource requests.
+- name: mutualTLS
+  type: mutualTLS
+  sources: [well-known/virgin-money-uk-openid-configuration.json]
+  details:
+    token_endpoint_auth_methods_supported: [client_secret_basic, client_secret_post, tls_client_auth, private_key_jwt, client_secret_jwt]
+    tls_client_certificate_bound_access_tokens: true
+    note: >-
+      Mutual-TLS client authentication (tls_client_auth) and certificate-bound
+      access tokens per FAPI. TPPs present OBIE (OBWAC/OBSeal) or eIDAS
+      (QWAC/QSEAL) transport/signing certificates. private_key_jwt also supported.

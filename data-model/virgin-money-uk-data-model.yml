@@ -1,0 +1,37 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-opendata-api-standard-openapi.json
+note: >-
+  Entity graph derived from the OBIE Open Data API surface (the one machine-readable
+  spec in the repo). The authenticated Read/Write (AIS/PIS/CBPII) entities are
+  documented on the portal but not present as an OpenAPI in this repo, so only the
+  Open Data entities are modelled here.
+entities:
+- name: Branch
+  path: /branches
+  description: Physical bank branch locations (address, services, accessibility, opening hours).
+- name: ATM
+  path: /atms
+  description: ATM locations, features, and accessibility.
+- name: PersonalCurrentAccount
+  path: /personal-current-accounts
+  description: Personal current account product terms, eligibility, features, and fees.
+- name: BusinessCurrentAccount
+  path: /business-current-accounts
+  description: Business current account product terms and pricing.
+- name: UnsecuredSMELoan
+  path: /unsecured-sme-loans
+  description: Unsecured SME loan product terms and representative rates.
+- name: CommercialCreditCard
+  path: /commercial-credit-cards
+  description: Commercial credit card product terms and pricing.
+relationships:
+- from: Branch
+  to: ATM
+  type: has_many
+  via: co-located ATMs (Brand > Branch > ATM in the OBIE Open Data hierarchy)
+- from: PersonalCurrentAccount
+  to: Branch
+  type: belongs_to
+  via: Brand (products and branches are grouped under a Brand in the OBIE Open Data model)
+render: null

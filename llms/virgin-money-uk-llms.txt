@@ -1,0 +1,43 @@
+# Virgin Money UK
+
+> Virgin Money UK is a full-service UK retail and business bank (Virgin Money, Clydesdale Bank, Yorkshire Bank, and B brands), acquired by Nationwide Building Society on 1 October 2024. As an FCA/PRA-authorised ASPSP it publishes UK Open Banking (OBIE Read/Write Standard) APIs — Account & Transaction Information (AIS), Payment Initiation (PIS), and Confirmation of Funds (CBPII) — plus a public Open Data API. Access to the Read/Write APIs is secured with FAPI OAuth2/OpenID Connect, mutual-TLS, PSD2 strong customer authentication, and dynamic client registration using OBIE (OBWAC/OBSeal) or eIDAS (QWAC/QSEAL) certificates.
+
+## Developer
+
+- [Developer portal](https://developer.virginmoney.com/)
+- [Merged APIs (Virgin Money, Clydesdale, Yorkshire)](https://developer.virginmoney.com/merged/)
+- [Standalone APIs (personal accounts & credit cards)](https://developer.virginmoney.com/standalone/account-and-transaction/)
+- [OIDC / authorisation](https://developer.virginmoney.com/merged/oidc/)
+- [Dynamic client registration](https://developer.virginmoney.com/merged/dynamic-registration/)
+
+## APIs
+
+- [Open Data API](https://developer.virginmoney.com/) — public ATM/branch locator + product data (OBIE Open Data Standard).
+- [Account & Transaction API (AIS)](https://developer.virginmoney.com/merged/accounts/) — accounts, balances, transactions, standing orders, direct debits, statements. OBIE v3.1.x.
+- [Domestic / Scheduled / International / File Payments (PIS)](https://developer.virginmoney.com/merged/dip/) — payment initiation. OBIE v3.1.x.
+- [Confirmation of Funds (CBPII)](https://developer.virginmoney.com/merged/cof/) — funds availability check. OBIE v3.1.x.
+- [Token API](https://developer.virginmoney.com/merged/token/) — OAuth2 token endpoint (v3.0).
+- [Dynamic Client Registration (DCR)](https://developer.virginmoney.com/merged/dynamic-registration/) — TPP registration (v3.2).
+
+## Specs & artifacts
+
+- [Open Data OpenAPI (Swagger 2.0)](openapi/obie-opendata-api-standard-openapi.json)
+- [OpenID Connect discovery](well-known/virgin-money-uk-openid-configuration.json)
+- [Authentication profile](authentication/virgin-money-uk-authentication.yml)
+- [OAuth scopes](scopes/virgin-money-uk-scopes.yml)
+- [Conventions (idempotency, tracing, pagination)](conventions/virgin-money-uk-conventions.yml)
+- [Error catalogue](errors/virgin-money-uk-problem-types.yml)
+- [Standards conformance (FAPI, PSD2, OBIE)](conformance/virgin-money-uk-conformance.yml)
+- [Lifecycle & versioning](lifecycle/virgin-money-uk-lifecycle.yml)
+
+## Auth
+
+- Profile: FAPI (Financial-grade API), UK Open Banking / OBIE Read-Write.
+- Issuer: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
+- Scopes: openid, accounts, payments, fundsconfirmations
+- Flows: authorization_code (consent) + client_credentials; mutual-TLS certificate-bound tokens; PSD2 SCA (acr urn:openbanking:psd2:sca).
+
+## Security
+
+- [security.txt](well-known/virgin-money-uk-security.txt) — security@virginmoney.com
+- [Disclosure policy](https://uk.virginmoney.com/disclosure-policy.html)

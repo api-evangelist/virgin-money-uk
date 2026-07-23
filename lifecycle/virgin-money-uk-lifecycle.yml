@@ -1,0 +1,40 @@
+generated: '2026-07-23'
+method: searched
+source: >-
+  https://developer.virginmoney.com/ (merged & standalone portals) +
+  OBIE Read/Write Standard versioning conventions
+note: >-
+  Versioning follows the OBIE Read/Write Standard (major.minor in the resource
+  path). Documented product versions differ across the portal: AIS/PIS/CBPII at
+  OBIE v3.1.x, Dynamic Client Registration at v3.2, Token at v3.0, Open Data at
+  v2.x/v1.3. No public status page or SLA page was found on the developer portal.
+versioning:
+  scheme: uri-path
+  detail: OBIE major.minor embedded in the path; discrete versions documented per product.
+  documented_versions:
+    account-and-transaction-merged: '3.1.2'
+    account-and-transaction-standalone: '3.1.1'
+    payment-initiation-merged: '3.1.2'
+    confirmation-of-funds-merged: '3.1.2'
+    dynamic-client-registration: '3.2'
+    token: '3.0'
+    open-data: '2.x'
+deprecation:
+  policy: >-
+    Follows the OBIE Read/Write Standard version-management approach — new minor
+    versions run in parallel and older versions are retired on published notice
+    periods. No provider-specific deprecation-policy page was located.
+  sunset_header: unknown
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    ASPSPs publish PSD2 dedicated-interface availability & performance statistics
+    quarterly under the Payment Services Regulations, but no machine-readable SLA
+    page was found on developer.virginmoney.com.
+status_page: null
+transfer_note: >-
+  Virgin Money UK was acquired by Nationwide Building Society (1 Oct 2024); the
+  banking business is scheduled to transfer into Nationwide on 2 April 2026, which
+  will affect the long-term lifecycle of these Open Banking endpoints.
+deprecated_operations: []

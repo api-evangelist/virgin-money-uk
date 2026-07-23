@@ -1,0 +1,14 @@
+# Our security email address
+Contact: mailto:security@virginmoney.com
+
+# Our security.txt file
+Canonical: https://uk.virginmoney.com/.well-known/security.txt
+
+# Our security policy
+Policy: https://uk.virginmoney.com/disclosure-policy.html
+
+# Our careers
+Hiring: https://careers.virginmoney.com/
+
+# Expiry date
+Expires: 2025-03-31T00:00:00.000Z

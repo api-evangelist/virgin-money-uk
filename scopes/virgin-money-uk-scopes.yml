@@ -1,0 +1,40 @@
+generated: '2026-07-23'
+method: searched
+source: well-known/virgin-money-uk-openid-configuration.json
+docs: https://developer.virginmoney.com/merged/oidc/
+note: >-
+  Scopes taken verbatim from the live production OpenID Connect discovery document
+  (scopes_supported). These are the standard UK Open Banking / OBIE Read-Write
+  scopes governing AIS, PIS, and CBPII access.
+schemes:
+- name: OAuth2
+  source: well-known/virgin-money-uk-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/oidcapi/oauth2/authorize
+    tokenUrl: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/oidcapi/oauth2/token
+  - flow: clientCredentials
+    tokenUrl: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/oidcapi/oauth2/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; required to obtain an ID token identifying the consent.
+  flows: [authorizationCode]
+  sources: [well-known/virgin-money-uk-openid-configuration.json]
+- scope: accounts
+  description: >-
+    Account and Transaction Information (AIS) — read accounts, balances,
+    transactions, beneficiaries, standing orders, direct debits, statements.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/virgin-money-uk-openid-configuration.json]
+- scope: payments
+  description: >-
+    Payment Initiation (PIS) — initiate domestic/international immediate,
+    scheduled, and file payments.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/virgin-money-uk-openid-configuration.json]
+- scope: fundsconfirmations
+  description: >-
+    Confirmation of Funds (CBPII) — confirm whether sufficient funds are
+    available to make a card-based payment.
+  flows: [authorizationCode, clientCredentials]
+  sources: [well-known/virgin-money-uk-openid-configuration.json]

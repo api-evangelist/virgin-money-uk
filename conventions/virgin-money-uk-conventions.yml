@@ -1,0 +1,56 @@
+generated: '2026-07-23'
+method: derived
+source: >-
+  OBIE Read/Write Data API Standard (implemented by the merged & standalone
+  developer portals) + openapi/obie-opendata-api-standard-openapi.json +
+  well-known/virgin-money-uk-openid-configuration.json
+note: >-
+  Cross-cutting request/response semantics for Virgin Money UK's Open Banking
+  (OBIE Read/Write) surface. Derived from the OBIE Read/Write Standard the bank's
+  documented AIS/PIS/CBPII APIs implement; not from a bank-specific conventions page.
+authentication:
+  style: FAPI OAuth2 authorization_code + client_credentials, mTLS-bound tokens
+  detail: See authentication/virgin-money-uk-authentication.yml
+idempotency:
+  supported: true
+  mechanism: header
+  header: x-idempotency-key
+  scope: Payment Initiation (PIS) POST operations (domestic, scheduled, international, file payments)
+  retention: >-
+    Per OBIE Read/Write Standard, idempotency keys are honoured for a minimum of
+    24 hours; a replayed key with an identical request body returns the original
+    resource rather than creating a duplicate payment.
+  note: >-
+    x-idempotency-key is a REQUIRED header on OBIE payment-order creation
+    endpoints, which Virgin Money implements for its merged and standalone
+    payment APIs.
+request_tracing:
+  header: x-fapi-interaction-id
+  detail: >-
+    FAPI interaction id echoed by the ASPSP for end-to-end tracing; TPPs also send
+    x-fapi-auth-date, x-fapi-customer-ip-address, and x-customer-user-agent.
+pagination:
+  style: page-based (OBIE)
+  params: [page]
+  response_fields: [Links.Self, Links.First, Links.Prev, Links.Next, Links.Last, Meta.TotalPages, Meta.FirstAvailableDateTime, Meta.LastAvailableDateTime]
+versioning:
+  style: uri-path
+  detail: >-
+    OBIE major.minor version embedded in the resource path (e.g. /open-banking/v3.1/aisp).
+    Documented versions vary by product — AIS/PIS/CBPII at v3.1.x, DCR at v3.2, token at v3.0.
+error_envelope:
+  shape: OBError (OBIE)
+  detail: >-
+    { "Code": "...", "Message": "...", "Errors": [ { "ErrorCode": "UK.OBIE.*",
+    "Message": "...", "Path": "...", "Url": "..." } ] }. See
+    errors/virgin-money-uk-problem-types.yml.
+rate_limit_signaling:
+  detail: >-
+    HTTP 429 Too Many Requests returned when rate/polling limits are exceeded
+    (present in the Open Data OpenAPI responses). OBIE recommends AISPs poll a
+    consented account no more than 4 times in 24h without customer presence.
+cross_links:
+  errors: errors/virgin-money-uk-problem-types.yml
+  lifecycle: lifecycle/virgin-money-uk-lifecycle.yml
+  authentication: authentication/virgin-money-uk-authentication.yml
+  scopes: scopes/virgin-money-uk-scopes.yml

@@ -46,7 +46,7 @@ tags:
 - Confirmation of Funds
 - FAPI
 created: '2026-07-23'
-modified: '2026-07-23'
+modified: '2026-07-24'
 specificationVersion: '0.19'
 apis:
 - aid: virgin-money-uk:open-data-api
@@ -257,8 +257,44 @@ apis:
   - type: APIReference
     url: https://developer.virginmoney.com/standalone-apis/our-apis/accounts/account-and-transaction/v/3.1.1/
 common:
+- type: AgenticAccess
+  url: agentic-access/virgin-money-uk-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/virgin-money-uk-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/virgin-money-uk-domain-security.yml
+- type: Security
+  url: security/virgin-money-uk-vulnerability-disclosure.yml
+- type: WellKnown
+  url: well-known/virgin-money-uk-well-known.yml
 - type: WellKnown
   url: well-known/virgin-money-uk-openid-configuration.json
+- type: SecurityTxt
+  url: well-known/virgin-money-uk-security.txt
+- type: Authentication
+  url: authentication/virgin-money-uk-authentication.yml
+- type: OAuthScopes
+  url: scopes/virgin-money-uk-scopes.yml
+- type: Conformance
+  url: conformance/virgin-money-uk-conformance.yml
+- type: Conventions
+  url: conventions/virgin-money-uk-conventions.yml
+- type: Idempotency
+  url: conventions/virgin-money-uk-conventions.yml
+- type: ErrorCatalog
+  url: errors/virgin-money-uk-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/virgin-money-uk-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/virgin-money-uk-lifecycle.yml
+- type: DataModel
+  url: data-model/virgin-money-uk-data-model.yml
+- type: Overlay
+  url: overlays/virgin-money-uk-opendata-overlay.yaml
+- type: LLMsTxt
+  url: llms/virgin-money-uk-llms.txt
+- type: AgentSkill
+  url: skills/virgin-money-uk-locate-atms-branches.md
 - type: Website
   url: https://uk.virginmoney.com/
 - type: DeveloperPortal
