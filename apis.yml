@@ -60,35 +60,12 @@ created: '2026-07-23'
 modified: '2026-07-24'
 specificationVersion: '0.23'
 apis:
-- aid: virgin-money-uk:open-data-api
-  name: Virgin Money UK Open Data API
-  description: >-
-    PUBLIC, unauthenticated OBIE Open Data API surface (ATM Locator, Branch
-    Locator, Personal & Business Current Accounts, Unsecured SME Loans,
-    Commercial Credit Cards). Represented as the shared OBIE Open Data Standard;
-    the legacy CYBG base URL (api-ib.cybservices.co.uk) is documented in the
-    OBIE participant registry but returned HTTP 404 on probe (2026-07-23), so
-    the live current-brand endpoint is unverified.
-  humanURL: https://developer.virginmoney.com/
-  baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
-  tags:
-  - Open Data
-  - ATM Locator
-  - Branch Locator
-  properties:
-  - type: OpenAPI
-    url: openapi/obie-opendata-api-standard-openapi.json
-  - type: Documentation
-    url: https://developer.virginmoney.com/
-  - type: APIReference
-    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
 - aid: virgin-money-uk:account-transaction-api
   name: Virgin Money UK Account and Transaction API (AIS)
   description: >-
-    OBIE Read/Write Account & Transaction Information (AIS) API - retrieve
-    accounts, balances, transactions, beneficiaries, standing orders, direct
-    debits, and statements. Merged brand family (Virgin Money, Clydesdale,
-    Yorkshire), OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
+    OBIE Read/Write Account & Transaction Information (AIS) API - retrieve accounts, balances, transactions,
+    beneficiaries, standing orders, direct debits, and statements. Merged brand family (Virgin Money,
+    Clydesdale, Yorkshire), OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
   humanURL: https://developer.virginmoney.com/merged/accounts/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -104,9 +81,8 @@ apis:
 - aid: virgin-money-uk:domestic-payments-api
   name: Virgin Money UK Domestic Immediate Payment API (PIS)
   description: >-
-    OBIE Read/Write Payment Initiation (PIS) API for domestic immediate
-    payments. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS +
-    PSD2 SCA.
+    OBIE Read/Write Payment Initiation (PIS) API for domestic immediate payments. Merged brand family,
+    OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
   humanURL: https://developer.virginmoney.com/merged/dip/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -120,9 +96,8 @@ apis:
 - aid: virgin-money-uk:domestic-scheduled-payments-api
   name: Virgin Money UK Domestic Scheduled Payment API (PIS)
   description: >-
-    OBIE Read/Write Payment Initiation (PIS) API for domestic scheduled
-    payments. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS +
-    PSD2 SCA.
+    OBIE Read/Write Payment Initiation (PIS) API for domestic scheduled payments. Merged brand family,
+    OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
   humanURL: https://developer.virginmoney.com/merged/dsp/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -136,8 +111,8 @@ apis:
 - aid: virgin-money-uk:file-payments-api
   name: Virgin Money UK File Payments API (PIS)
   description: >-
-    OBIE Read/Write Payment Initiation (PIS) API for batch/file payments.
-    Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
+    OBIE Read/Write Payment Initiation (PIS) API for batch/file payments. Merged brand family, OBIE v3.1.2.
+    FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
   humanURL: https://developer.virginmoney.com/merged/file-payments/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -151,8 +126,8 @@ apis:
 - aid: virgin-money-uk:international-payments-api
   name: Virgin Money UK International Payments API (PIS)
   description: >-
-    OBIE Read/Write Payment Initiation (PIS) API for international payments.
-    Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
+    OBIE Read/Write Payment Initiation (PIS) API for international payments. Merged brand family, OBIE
+    v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
   humanURL: https://developer.virginmoney.com/merged/ip/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -166,9 +141,8 @@ apis:
 - aid: virgin-money-uk:international-scheduled-payments-api
   name: Virgin Money UK International Scheduled Payments API (PIS)
   description: >-
-    OBIE Read/Write Payment Initiation (PIS) API for international scheduled
-    payments. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS +
-    PSD2 SCA.
+    OBIE Read/Write Payment Initiation (PIS) API for international scheduled payments. Merged brand family,
+    OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
   humanURL: https://developer.virginmoney.com/merged/isp/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -182,10 +156,9 @@ apis:
 - aid: virgin-money-uk:confirmation-of-funds-api
   name: Virgin Money UK Confirmation of Funds API (CBPII)
   description: >-
-    OBIE Read/Write Confirmation of Funds (CBPII) API - allows a Card Based
-    Payment Instrument Issuer to check whether sufficient balance is available
-    to make a payment. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC +
-    mTLS + PSD2 SCA.
+    OBIE Read/Write Confirmation of Funds (CBPII) API - allows a Card Based Payment Instrument Issuer
+    to check whether sufficient balance is available to make a payment. Merged brand family, OBIE v3.1.2.
+    FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
   humanURL: https://developer.virginmoney.com/merged/cof/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -199,11 +172,10 @@ apis:
 - aid: virgin-money-uk:oidc-api
   name: Virgin Money UK OIDC API
   description: >-
-    Open Banking-compliant OpenID Connect provider for TPP authorisation.
-    Live production discovery document confirmed (HTTP 200, 2026-07-23):
-    issuer https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production,
-    authorization, token, and registration endpoints, acr
-    urn:openbanking:psd2:sca, tls_client_auth and private_key_jwt supported.
+    Open Banking-compliant OpenID Connect provider for TPP authorisation. Live production discovery document
+    confirmed (HTTP 200, 2026-07-23): issuer https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production,
+    authorization, token, and registration endpoints, acr urn:openbanking:psd2:sca, tls_client_auth and
+    private_key_jwt supported.
   humanURL: https://developer.virginmoney.com/standalone/oidc/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -216,13 +188,13 @@ apis:
   - type: WellKnown
     url: well-known/virgin-money-uk-openid-configuration.json
   - type: APIReference
-    url: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/.well-known/openid-configuration
+    url: >-
+      https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/.well-known/openid-configuration
 - aid: virgin-money-uk:token-api
   name: Virgin Money UK Token API
   description: >-
-    OAuth2 token endpoint for obtaining access tokens used to call the OBIE
-    Read/Write APIs. Documented at v3.0. Confirmed token endpoint (from live
-    OIDC discovery): secureapi.prod.ob.virginmoney.com.
+    OAuth2 token endpoint for obtaining access tokens used to call the OBIE Read/Write APIs. Documented
+    at v3.0. Confirmed token endpoint (from live OIDC discovery): secureapi.prod.ob.virginmoney.com.
   humanURL: https://developer.virginmoney.com/merged/token/
   baseURL: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -239,10 +211,9 @@ apis:
 - aid: virgin-money-uk:dynamic-client-registration-api
   name: Virgin Money UK Dynamic Client Registration API
   description: >-
-    OBIE Dynamic Client Registration (DCR) API allowing TPPs to register with
-    Virgin Money brands using OBIE (OBWAC/OBSeal) or eIDAS (QWAC/QSEAL)
-    certificates. Documented at v3.2. Confirmed registration endpoint (from
-    live OIDC discovery): secureapi.prod.ob.virginmoney.com/.../register.
+    OBIE Dynamic Client Registration (DCR) API allowing TPPs to register with Virgin Money brands using
+    OBIE (OBWAC/OBSeal) or eIDAS (QWAC/QSEAL) certificates. Documented at v3.2. Confirmed registration
+    endpoint (from live OIDC discovery): secureapi.prod.ob.virginmoney.com/.../register.
   humanURL: https://developer.virginmoney.com/merged/dynamic-registration/
   baseURL: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -256,10 +227,9 @@ apis:
 - aid: virgin-money-uk:standalone-account-transaction-api
   name: Virgin Money UK Standalone Account and Transaction API (AIS)
   description: >-
-    OBIE Read/Write Account & Transaction Information (AIS) API for the
-    Standalone brand family (personal credit cards and sort-code-08 current and
-    savings accounts), documented at OBIE v3.1.1. FAPI OAuth2/OIDC + mTLS +
-    PSD2 SCA.
+    OBIE Read/Write Account & Transaction Information (AIS) API for the Standalone brand family (personal
+    credit cards and sort-code-08 current and savings accounts), documented at OBIE v3.1.1. FAPI OAuth2/OIDC
+    + mTLS + PSD2 SCA.
   humanURL: https://developer.virginmoney.com/standalone/account-and-transaction/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
@@ -269,7 +239,92 @@ apis:
   - type: Documentation
     url: https://developer.virginmoney.com/standalone/account-and-transaction/
   - type: APIReference
-    url: https://developer.virginmoney.com/standalone-apis/our-apis/accounts/account-and-transaction/v/3.1.1/
+    url: >-
+      https://developer.virginmoney.com/standalone-apis/our-apis/accounts/account-and-transaction/v/3.1.1/
+- aid: virgin-money-uk:virgin-money-uk-atm-api
+  name: Virgin Money UK ATM API
+  description: Endpoint for getting ATM data
+  humanURL: https://developer.virginmoney.com/
+  baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
+  tags:
+  - ATM
+  properties:
+  - type: OpenAPI
+    url: openapi/virgin-money-uk-atm-api-openapi.yml
+  - type: Documentation
+    url: https://developer.virginmoney.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+- aid: virgin-money-uk:virgin-money-uk-bca-api
+  name: Virgin Money UK BCA API
+  description: Endpoint for getting Business Current Account data
+  humanURL: https://developer.virginmoney.com/
+  baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
+  tags:
+  - BCA
+  properties:
+  - type: OpenAPI
+    url: openapi/virgin-money-uk-bca-api-openapi.yml
+  - type: Documentation
+    url: https://developer.virginmoney.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+- aid: virgin-money-uk:virgin-money-uk-branch-api
+  name: Virgin Money UK Branch API
+  description: Endpoint for getting Branch data
+  humanURL: https://developer.virginmoney.com/
+  baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
+  tags:
+  - Branch
+  properties:
+  - type: OpenAPI
+    url: openapi/virgin-money-uk-branch-api-openapi.yml
+  - type: Documentation
+    url: https://developer.virginmoney.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+- aid: virgin-money-uk:virgin-money-uk-ccc-api
+  name: Virgin Money UK CCC API
+  description: Endpoint for getting Commercial Credit Card data
+  humanURL: https://developer.virginmoney.com/
+  baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
+  tags:
+  - CCC
+  properties:
+  - type: OpenAPI
+    url: openapi/virgin-money-uk-ccc-api-openapi.yml
+  - type: Documentation
+    url: https://developer.virginmoney.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+- aid: virgin-money-uk:virgin-money-uk-pca-api
+  name: Virgin Money UK PCA API
+  description: Endpoint for getting Personal Current Account data
+  humanURL: https://developer.virginmoney.com/
+  baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
+  tags:
+  - PCA
+  properties:
+  - type: OpenAPI
+    url: openapi/virgin-money-uk-pca-api-openapi.yml
+  - type: Documentation
+    url: https://developer.virginmoney.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+- aid: virgin-money-uk:virgin-money-uk-sme-api
+  name: Virgin Money UK SME API
+  description: Endpoint for getting Unsecured SME Loan data
+  humanURL: https://developer.virginmoney.com/
+  baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
+  tags:
+  - SME
+  properties:
+  - type: OpenAPI
+    url: openapi/virgin-money-uk-sme-api-openapi.yml
+  - type: Documentation
+    url: https://developer.virginmoney.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
 common:
 - type: AgenticAccess
   url: agentic-access/virgin-money-uk-agentic-access.yml
