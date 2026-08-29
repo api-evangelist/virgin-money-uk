@@ -1,0 +1,52 @@
+slug: virgin-money-uk
+provider: Virgin Money UK
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: ATM
+  spec_file: virgin-money-uk-atm-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.8
+  evidence: GET /atms — 'Open Data ATM API', 'Latest Swagger specification for OpenData'
+  reason: Publishes the bank's ATM estate under UK Open Data. This is ATM channel information, which sits
+    under Banking Channels Management (branch, ATM, online channel operations).
+- tag: Branch
+  spec_file: virgin-money-uk-branch-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.8
+  evidence: GET /branches — 'Open Data Branch API'
+  reason: Publishes branch locations/details under Open Data; branch network information is part of Banking
+    Channels Management.
+- tag: BCA
+  spec_file: virgin-money-uk-bca-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.7
+  evidence: GET /business-current-accounts — 'Open Data BCA API'
+  reason: UK Open Data product-reference endpoint publishing the bank's business current account product
+    range and terms. Best read as banking product catalogue publication rather than account servicing,
+    since no account-level operations exist.
+- tag: PCA
+  spec_file: virgin-money-uk-pca-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.7
+  evidence: GET /personal-current-accounts — 'Open Data PCA API'
+  reason: Open Data product-reference feed for personal current accounts; describes the product master/catalogue,
+    not individual customer accounts.
