@@ -21,6 +21,18 @@ description: >-
   FAPI-grade OAuth2/OpenID Connect, PSD2 strong customer authentication,
   mutual-TLS client authentication, and dynamic client registration using
   OBIE (OBWAC/OBSeal) or eIDAS (QWAC/QSEAL) certificates.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
