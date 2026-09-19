@@ -211,7 +211,7 @@ apis:
   baseURL: https://secureapi.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
   - Authentication
-  - Token
+  - Tokens
   tags_raw:
   - OAuth2
   - Token
