@@ -1,0 +1,30 @@
+{
+  "provider": "virgin-money-uk",
+  "sources": [
+    "_original/obie-opendata-api-standard-openapi.json"
+  ],
+  "outputs": [
+    "virgin-money-uk-atm-api-openapi.yml",
+    "virgin-money-uk-bca-api-openapi.yml",
+    "virgin-money-uk-branch-api-openapi.yml",
+    "virgin-money-uk-ccc-api-openapi.yml",
+    "virgin-money-uk-pca-api-openapi.yml",
+    "virgin-money-uk-sme-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "obie-opendata-api-standard-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "virgin-money-uk-atm-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "virgin-money-uk-bca-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "virgin-money-uk-branch-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "virgin-money-uk-ccc-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "virgin-money-uk-pca-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "virgin-money-uk-sme-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}
