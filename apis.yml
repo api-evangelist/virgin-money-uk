@@ -47,7 +47,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
-- Financial-Services
+- Financial Services
 - Banking
 - Open Banking
 - PSD2
@@ -68,6 +68,7 @@ tags_raw:
 - Account Information
 - Confirmation of Funds
 - FAPI
+- Financial-Services
 created: '2026-07-23'
 modified: '2026-07-24'
 specificationVersion: '0.23'
@@ -329,6 +330,8 @@ apis:
   humanURL: https://developer.virginmoney.com/
   baseURL: https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking
   tags:
+  - Small Business
+  tags_raw:
   - SME
   properties:
   - type: OpenAPI
