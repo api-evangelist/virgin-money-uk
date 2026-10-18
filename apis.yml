@@ -192,6 +192,10 @@ apis:
   humanURL: https://developer.virginmoney.com/standalone/oidc/
   baseURL: https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production
   tags:
+  - OpenID Connect
+  - Authentication
+  - FAPI
+  tags_raw:
   - OIDC
   - Authentication
   - FAPI
