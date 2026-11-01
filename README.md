@@ -1,4 +1,4 @@
-# Virgin Money UK (virgin-money-uk)
+# Virgin Money UK
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,66 +64,131 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Virgin Money UK is a full-service UK retail and business bank operating the Virgin Money, Clydesdale Bank, Yorkshire Bank, and B brands. Formerly the FTSE-listed Virgin Money UK PLC (the former CYBG plc), it was acquired by Nationwide Building Society on 1 October 2024 and its banking business is scheduled to transfer into Nationwide on 2 April 2026. It is authorised by the PRA and regulated by the FCA and PRA as an ASPSP, and is a fully participating UK Open Banking provider under PSD2 (it is not one of the original CMA9).
+Virgin Money UK is a full-service UK retail and business bank, operating the Virgin Money, Clydesdale Bank, Yorkshire Bank, and B brands across personal current and savings accounts, mortgages, credit cards, and business banking. Formerly the FTSE-listed Virgin Money UK PLC (the former CYBG plc), it was acquired by Nationwide Building Society on 1 October 2024, making it part of a mutually owned group; its banking business is scheduled to transfer into Nationwide on 2 April 2026. The bank is authorised by the Prudential Regulation Authority and regulated by the FCA and PRA as an ASPSP. It is not one of the original CMA9 but is a fully participating UK Open Banking provider under PSD2 and the Payment Services Regulations 2017, publishing OBIE Read/Write Standard APIs - Account & Transaction Information (AIS), Payment Initiation (PIS), and Confirmation of Funds (CBPII) - through its developer portal at developer.virginmoney.com, split into "Merged" APIs (Virgin Money, Clydesdale and Yorkshire accounts, sort codes 05/82) and "Standalone" APIs (personal accounts and credit cards, sort code 08). Access is secured with FAPI-grade OAuth2/OpenID Connect, PSD2 strong customer authentication, mutual-TLS client authentication, and dynamic client registration using OBIE (OBWAC/OBSeal) or eIDAS (QWAC/QSEAL) certificates.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/virgin-money-uk/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/virgin-money-uk/refs/heads/main/apis.yml)
+**Areas:** Financial Services · Banking · Open Banking · PSD2 · OBIE · United Kingdom · Payments · Account Information · Confirmation of Funds · FAPI
 
-## Tags
+## Virgin Money UK on APIs.io
 
-- Financial Services
-- Banking
-- Open Banking
-- PSD2
-- OBIE
-- United Kingdom
-- Payments
-- Account Information
-- Confirmation of Funds
-- FAPI
+Everything profiled for Virgin Money UK is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/virgin-money-uk/](https://apis.io/providers/virgin-money-uk/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (17)
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+- [Virgin Money UK Account and Transaction API (AIS)](https://apis.io/apis/virgin-money-uk/account-transaction-api/) — OBIE Read/Write Account & Transaction Information (AIS) API - retrieve accounts, balances, transactions, beneficiaries, standing orders, direct debits, and…
+- [Virgin Money UK Domestic Immediate Payment API (PIS)](https://apis.io/apis/virgin-money-uk/domestic-payments-api/) — OBIE Read/Write Payment Initiation (PIS) API for domestic immediate payments. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
+- [Virgin Money UK Domestic Scheduled Payment API (PIS)](https://apis.io/apis/virgin-money-uk/domestic-scheduled-payments-api/) — OBIE Read/Write Payment Initiation (PIS) API for domestic scheduled payments. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
+- [Virgin Money UK File Payments API (PIS)](https://apis.io/apis/virgin-money-uk/file-payments-api/) — OBIE Read/Write Payment Initiation (PIS) API for batch/file payments. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
+- [Virgin Money UK International Payments API (PIS)](https://apis.io/apis/virgin-money-uk/international-payments-api/) — OBIE Read/Write Payment Initiation (PIS) API for international payments. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
+- [Virgin Money UK International Scheduled Payments API (PIS)](https://apis.io/apis/virgin-money-uk/international-scheduled-payments-api/) — OBIE Read/Write Payment Initiation (PIS) API for international scheduled payments. Merged brand family, OBIE v3.1.2. FAPI OAuth2/OIDC + mTLS + PSD2 SCA.
+- [Virgin Money UK Confirmation of Funds API (CBPII)](https://apis.io/apis/virgin-money-uk/confirmation-of-funds-api/) — OBIE Read/Write Confirmation of Funds (CBPII) API - allows a Card Based Payment Instrument Issuer to check whether sufficient balance is available to make a…
+- [Virgin Money UK OIDC API](https://apis.io/apis/virgin-money-uk/oidc-api/) — Open Banking-compliant OpenID Connect provider for TPP authorisation. Live production discovery document confirmed (HTTP 200, 2026-07-23): issuer…
+- [Virgin Money UK Token API](https://apis.io/apis/virgin-money-uk/token-api/) — OAuth2 token endpoint for obtaining access tokens used to call the OBIE Read/Write APIs. Documented at v3.0. Confirmed token endpoint (from live OIDC…
+- [Virgin Money UK Dynamic Client Registration API](https://apis.io/apis/virgin-money-uk/dynamic-client-registration-api/) — OBIE Dynamic Client Registration (DCR) API allowing TPPs to register with Virgin Money brands using OBIE (OBWAC/OBSeal) or eIDAS (QWAC/QSEAL) certificates.…
+- [Virgin Money UK Standalone Account and Transaction API (AIS)](https://apis.io/apis/virgin-money-uk/standalone-account-transaction-api/) — OBIE Read/Write Account & Transaction Information (AIS) API for the Standalone brand family (personal credit cards and sort-code-08 current and savings…
+- [Virgin Money UK ATM API](https://apis.io/apis/virgin-money-uk/virgin-money-uk-atm-api/) — Endpoint for getting ATM data
+- [Virgin Money UK BCA API](https://apis.io/apis/virgin-money-uk/virgin-money-uk-bca-api/) — Endpoint for getting Business Current Account data
+- [Virgin Money UK Branch API](https://apis.io/apis/virgin-money-uk/virgin-money-uk-branch-api/) — Endpoint for getting Branch data
+- [Virgin Money UK CCC API](https://apis.io/apis/virgin-money-uk/virgin-money-uk-ccc-api/) — Endpoint for getting Commercial Credit Card data
+- [Virgin Money UK PCA API](https://apis.io/apis/virgin-money-uk/virgin-money-uk-pca-api/) — Endpoint for getting Personal Current Account data
+- [Virgin Money UK SME API](https://apis.io/apis/virgin-money-uk/virgin-money-uk-sme-api/) — Endpoint for getting Unsecured SME Loan data
 
-## APIs
+### Published properties
 
-Virgin Money UK publishes UK Open Banking (OBIE) APIs through its developer portal at [developer.virginmoney.com](https://developer.virginmoney.com/), split into two families:
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Merged APIs** — Virgin Money, Clydesdale and Yorkshire accounts (sort codes 05 / 82, 10-digit customer numbers) and business credit cards.
-- **Standalone APIs** — personal credit cards and current/savings accounts (sort code 08, 7-digit alphanumeric customer numbers).
+#### Agentic access (1)
 
-### Open Data API (Public)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Unauthenticated OBIE Open Data surface — ATM Locator, Branch Locator, Personal & Business Current Accounts, Unsecured SME Loans, and Commercial Credit Cards — represented against the shared OBIE Open Data Standard. The legacy CYBG base URL from the OBIE participant registry (`https://api-ib.cybservices.co.uk/ibapi/v2/banks/CB/open-banking`) returned HTTP 404 on probe (2026-07-23); the live current-brand endpoint is unverified.
+- [Virgin Money Uk Agentic Access](https://apis.io/agentic-access/virgin-money-uk/virgin-money-uk-agentic-access/)
 
-- **Human URL:** [https://developer.virginmoney.com/](https://developer.virginmoney.com/)
-- **Standard spec:** [openapi/obie-opendata-api-standard-openapi.json](openapi/obie-opendata-api-standard-openapi.json) (shared OBIE Open Data Standard, not a bank-proprietary contract)
+#### Collections (1)
 
-### Read/Write APIs (OBIE, FAPI-secured)
+Postman and Open Collection request collections.
 
-The OBIE Read/Write Standard family, secured with FAPI OAuth2/OpenID Connect, mutual-TLS client authentication, and PSD2 strong customer authentication:
+- [Open Data API](https://apis.io/collections/virgin-money-uk/open-obie-opendata-api-standard/)
 
-- **Account & Transaction Information (AIS)** — Merged v3.1.2 and Standalone v3.1.1 — [merged accounts](https://developer.virginmoney.com/merged/accounts/) · [standalone](https://developer.virginmoney.com/standalone/account-and-transaction/)
-- **Payment Initiation (PIS)** — Domestic Immediate ([dip](https://developer.virginmoney.com/merged/dip/)), Domestic Scheduled ([dsp](https://developer.virginmoney.com/merged/dsp/)), File Payments ([file-payments](https://developer.virginmoney.com/merged/file-payments/)), International ([ip](https://developer.virginmoney.com/merged/ip/)), International Scheduled ([isp](https://developer.virginmoney.com/merged/isp/)) — v3.1.2
-- **Confirmation of Funds (CBPII)** — [cof](https://developer.virginmoney.com/merged/cof/) — v3.1.2
+#### Overlays (1)
 
-### Security & Onboarding APIs
+OpenAPI overlays, including conversational phrasing for each operation.
 
-- **OIDC API** — Open Banking-compliant OpenID Connect provider. Live production discovery document confirmed (HTTP 200, 2026-07-23): [.well-known/openid-configuration](https://api.prod.ob.virginmoney.com/vmpsd2-psd2prod/psd2-production/.well-known/openid-configuration)
-- **Token API** — OAuth2 token endpoint (v3.0)
-- **Dynamic Client Registration API** — TPP registration with OBIE (OBWAC/OBSeal) or eIDAS (QWAC/QSEAL) certificates (v3.2)
+- [Virgin Money Uk Opendata Overlay](https://apis.io/overlays/virgin-money-uk/virgin-money-uk-opendata-overlay/)
 
-## Common Properties
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Virgin Money Uk Authentication](https://apis.io/security/virgin-money-uk/virgin-money-uk-authentication/)
+- [Virgin Money Uk Domain Security](https://apis.io/security/virgin-money-uk/virgin-money-uk-domain-security/)
+- [Virgin Money Uk Vulnerability Disclosure](https://apis.io/security/virgin-money-uk/virgin-money-uk-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Virgin Money Uk Scopes](https://apis.io/scopes/virgin-money-uk/virgin-money-uk-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://uk.virginmoney.com/)
-- [Developer Portal](https://developer.virginmoney.com/)
 - [Documentation](https://developer.virginmoney.com/merged/)
 - [Support](https://uk.virginmoney.com/support/)
-- [Terms of Service](https://uk.virginmoney.com/terms/)
-- [Privacy Policy](https://uk.virginmoney.com/privacy/)
+- [Terms of service](https://uk.virginmoney.com/terms/)
+- [Privacy policy](https://uk.virginmoney.com/privacy/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 45.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 35.5 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 44.6 |
+| Access clarity | 57.1 |
+
+**Agent readiness 36.5** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | na |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 48.8** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/virgin-money-uk/](https://apis.io/providers/virgin-money-uk/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Virgin Money UK: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/virgin-money-uk/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
